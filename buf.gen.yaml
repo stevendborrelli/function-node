@@ -1,0 +1,20 @@
+version: v2
+managed:
+  enabled: true
+plugins:
+  - out: ./proto/gen
+    #strategy: all
+    remote: buf.build/community/stephenh-ts-proto:v2.2.0
+    #local: protoc-gen-ts_proto
+    opt:
+      - useExactTypes=false #nice-grpc
+      - useOptionals=all
+      - outputClientImpl=grpc-web
+      - outputServices=nice-grpc,outputServices=generic-definitions
+      - addGrpcMetadata=true
+      - importSuffix=.js
+      - esModuleInterop=true
+      - ts_proto_opt=env=node
+inputs:
+- proto_file: proto/v1/run_function.proto
+
