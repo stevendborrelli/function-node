@@ -1,4 +1,3 @@
-//import {Server, ServerCredentials, ServerOptions} from '@grpc/grpc-js'
 import { createServer } from "nice-grpc";
 import { FunctionRunnerServiceDefinition } from "./proto/gen/v1/run_function.js";
 import { functionRunnerServiceImpl } from "./function.js";
@@ -7,14 +6,11 @@ import { join } from "node:path";
 import { ServerCredentials } from "@grpc/grpc-js";
 // getCredentials creates gRPC ChannelCredentials from TLS files on the filesystem
 export function getCredentials(opts) {
-    if (opts?.insecure || opts?.tlsCertDir === undefined) {
-        console.log("creating insecure credentials. Insecure:", opts?.insecure);
+    if (opts?.insecure || opts?.tlsCertDir === "" || opts?.tlsCertDir === undefined) {
         return ServerCredentials.createInsecure();
     }
     try {
-        console.log("Reading tls certs");
-        //const tlsCertDir = opts?.tlsCertDir;
-        const tlsCertDir = "foo";
+        const tlsCertDir = opts?.tlsCertDir;
         const privateKey = readFileSync(join(tlsCertDir, "tls.key"));
         const rootCerts = readFileSync(join(tlsCertDir, "tls.crt"));
         const certChain = readFileSync(join(tlsCertDir, "ca.crt"));

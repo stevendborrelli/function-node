@@ -46,7 +46,7 @@ export function warning(rsp, message) {
 export function setDesiredComposedResources(rsp, dcds) {
     if (rsp?.desired?.resources) {
         deepmergeInto(rsp.desired.resources, dcds);
-        console.log(JSON.stringify(rsp, null, 2));
+        //console.log(JSON.stringify(rsp, null, 2));
     }
     return rsp;
 }

@@ -1,6 +1,6 @@
 // import { CallContext } from "nice-grpc";
 import { fatal, normal, setDesiredComposedResources, setDesiredCompositeStatus, to, update, } from "./response.js";
-import { getDesiredComposedResources, getDesiredCompositeResource, getObservedCompositeResource, } from "./resource.js";
+import { getDesiredComposedResources, getDesiredCompositeResource, getObservedCompositeResource, } from "./request.js";
 export const functionRunnerServiceImpl = {
     async runFunction(req) {
         // set up a minimal response from the request

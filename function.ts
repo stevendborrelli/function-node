@@ -21,7 +21,7 @@ import {
     getDesiredComposedResources,
     getDesiredCompositeResource,
     getObservedCompositeResource,
-} from "./resource.js";
+} from "./request.js";
 
 export const functionRunnerServiceImpl: FunctionRunnerServiceImplementation = {
     async runFunction(
