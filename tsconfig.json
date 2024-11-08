@@ -104,8 +104,8 @@
   "files": [
     "main.ts",
     "function.ts",
-    "resource.ts",
+    "request.ts",
     "response.ts",
-    "server.ts",
+    "runtime.ts",
   ],
 }

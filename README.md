@@ -13,10 +13,10 @@ tsc
 Next run the function locally:
 
 ```shell
-node main.js
+node main.js -d --insecure
 ```
 
-Then run the example manifest:
+In another terminal run the example manifest:
 
 ```shell
 cd examples/extra_resources
@@ -26,9 +26,9 @@ cd examples/extra_resources
 ## Files
 
 - [main.ts](main.ts): sets up the environment and runs the server
-- [server.ts](server.ts): sets up the gRPC server and TLS credentials
+- [runtime.ts](runtime.ts): sets up the gRPC server and TLS credentials
 - [function.ts](function.ts): implements the function logic
-- [resource.ts](resource.ts): fetches resources
+- [request.ts](request.ts): fetch data from the request
 - [response.ts](response.ts): sets response fields
 
 ## Components
